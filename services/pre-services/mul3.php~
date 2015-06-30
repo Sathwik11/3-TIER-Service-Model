@@ -1,0 +1,21 @@
+<?php
+
+class mul3
+{
+
+function mul3($a,$b,$c)
+{
+return $a*$b*$c;
+}
+
+}
+
+$uri=array('uri'=>'http://localhost/');
+
+$server=new SoapServer(NULL,$uri);
+
+$server->setClass('mul3');
+
+$server->handle();
+
+?>

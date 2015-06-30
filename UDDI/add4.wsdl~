@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<definitions name="MyDefinition" 
+ targetNamespace="urn:myTargetNamespace"
+ xmlns:tns="urn:myTns"   
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+ xmlns="http://schemas.xmlsoap.org/wsdl/">
+ 
+<message name="myRequest">
+  <part name="reqParam1" type="xsd:integer"/>
+  <part name="reqParam2" type="xsd:integer"/>
+  <part name="reqParam3" type="xsd:integer"/>
+  <part name="reqParam4" type="xsd:integer"/>
+ </message>
+ <message name="myResponse">
+  <part name="resParam" type="xsd:integer"/>
+ </message>
+
+ <portType name="MyPortType">
+  <operation name="add4">
+   <input message="tns:myRequest"/>
+   <output message="tns:myResponse"/>
+  </operation>
+ </portType>
+
+ <binding name="MyBinding" type="tns:MyPortType">
+  <soap:binding style="rpc"
+   transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="add4">
+   <soap:operation soapAction="http://localhost/providingservice/services/pre-services/add4/add4"/>
+   <input>
+    <soap:body use="encoded" namespace="urn:myInputNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+   </input>
+   <output>
+    <soap:body use="encoded" namespace="urn:myOutputNamespace" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+   </output>
+  </operation>
+ </binding>
+
+ <service name="MyService">
+  <documentation>Returns a greeting string.
+  </documentation>
+  <port name="MyPort" binding="tns:MyBinding">
+   <soap:address location="http://localhost/providingservice/services/pre-services/add4/add4.php"/>
+  </port>
+ </service>
+
+</definitions>

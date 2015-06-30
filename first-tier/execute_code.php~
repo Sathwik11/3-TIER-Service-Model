@@ -1,0 +1,4 @@
+<?php
+$client = new SoapClient("http://localhost/providingservice/UDDI/add4.wsdl", array('soap_version' => SOAP_1_2,'trace' => 1 ));
+echo $client->add4(1,2);
+?>

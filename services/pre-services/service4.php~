@@ -1,0 +1,21 @@
+<?php
+
+class service4
+{
+
+function service4($a,$b)
+{
+return $a*$b;
+}
+
+}
+
+$uri=array('uri'=>'http://localhost/');
+
+$server=new SoapServer(NULL,$uri);
+
+$server->setClass('service4');
+
+$server->handle();
+
+?>

@@ -1,0 +1,21 @@
+<?php
+
+class add4
+{
+
+function add4($a,$b,$c,$d)
+{
+return $a+$b+$c+$d;
+}
+
+}
+
+$uri=array('uri'=>'http://localhost/');
+
+$server=new SoapServer(NULL,$uri);
+
+$server->setClass('add4');
+
+$server->handle();
+
+?>

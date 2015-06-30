@@ -1,0 +1,33 @@
+<?php
+//$selected_service = (int)($_GET['selected_service']);
+
+/* $con=mysqli_connect("localhost","root","toor","service1");
+$service_io_details = mysqli_query($con,"SELECT * FROM io where io_id=".$selected_service);
+$service_details = mysqli_query($con,"SELECT * FROM services where id=".$selected_service);
+if($row = mysqli_fetch_array($service_io_details))
+{
+$ip_count = $row['ip_count']; 
+$ip_types = $row['ip_types'];
+$op_count = $row['op_count'];
+$op_types = $row['op_types'];
+}
+
+if($row = mysqli_fetch_array($service_details))
+{
+$add_wsdl = $row['add_wsdl']; 
+$serv_name = $row['sname'];
+}
+
+$code = "<?php\n";
+$code = $code."$"."client = new SoapClient(\"".$add_wsdl."\", array('soap_version' => SOAP_1_2,'trace' => 1 ));\n";
+$code = $code. "echo $"."client->".$serv_name."(1,2);\n?>"; 
+
+$file=fopen("execute_code.php",'a+');
+$n=fwrite($file,$code);
+fclose($file); */
+
+//$output1 =  array('test'=>"Test2"); 
+
+//echo json_encode($output1); 
+
+?>

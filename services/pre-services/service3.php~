@@ -1,0 +1,21 @@
+<?php
+
+class service3
+{
+
+function service3($a,$b,$c,$d)
+{
+return $a+$b+$c+$d;
+}
+
+}
+
+$uri=array('uri'=>'http://localhost/');
+
+$server=new SoapServer(NULL,$uri);
+
+$server->setClass('service3');
+
+$server->handle();
+
+?>

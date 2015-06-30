@@ -1,0 +1,21 @@
+<?php
+
+class service5
+{
+
+function service5($a,$b,$c)
+{
+return $a*$b*$c;
+}
+
+}
+
+$uri=array('uri'=>'http://localhost/');
+
+$server=new SoapServer(NULL,$uri);
+
+$server->setClass('service5');
+
+$server->handle();
+
+?>

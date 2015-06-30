@@ -1,0 +1,16 @@
+<?php
+$con=mysqli_connect("localhost","root","toor","service1");
+
+$sname   =$_POST['sname'];
+$iptypes=$_POST['iptypes'];
+$optypes=$_POST['optypes'];
+$ip     =$_POST['ip'];
+
+$n_service=$_POST['n_service'];
+$n_service_php=$_POST['n_service_php'];
+echo $n_service;
+?>
+ 
+<br><br>
+
+

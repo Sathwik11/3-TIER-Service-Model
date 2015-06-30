@@ -1,0 +1,21 @@
+<?php
+
+class mul2
+{
+
+function mul2($a,$b)
+{
+return $a*$b;
+}
+
+}
+
+$uri=array('uri'=>'http://localhost/');
+
+$server=new SoapServer(NULL,$uri);
+
+$server->setClass('mul2');
+
+$server->handle();
+
+?>

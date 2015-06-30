@@ -1,0 +1,21 @@
+<?php
+
+class add2
+{
+
+function add2($a,$b)
+{
+return $a+$b;
+}
+
+}
+
+$uri=array('uri'=>'http://localhost/');
+
+$server=new SoapServer(NULL,$uri);
+
+$server->setClass('add2');
+
+$server->handle();
+
+?>
